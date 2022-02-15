@@ -18,7 +18,7 @@ class InstagramApp extends StatelessWidget {
             ),
             Builder(
               builder: (context) {
-                return FixedAppBottomBar();
+                return const FixedAppBottomBar();
               },
             ),
           ],
