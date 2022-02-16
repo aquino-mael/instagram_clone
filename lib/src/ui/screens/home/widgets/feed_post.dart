@@ -105,6 +105,7 @@ class FeedPost extends StatelessWidget {
               ),
             ],
           ),
+          const PostComments(),
         ],
       ),
     );
