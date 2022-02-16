@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../../mixins/mixins.dart';
+import '../../view_models/view_models.dart';
 import 'widgets/widgets.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({ Key? key }) : super(key: key);
+class HomeScreen extends StatelessWidget with NavigationManager {
+  static const screenName = '/home_screen';
+
+  final IHomeViewModel viewModel;
+
+  const HomeScreen({ Key? key, required this.viewModel }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    handleNavigaton(viewModel.streamRoute);
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -29,14 +37,18 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              viewModel.showRecentActivities();
+            },
             icon: const Icon(
               Icons.favorite_border_rounded,
               color: Colors.black, 
             ),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              viewModel.showDirects();
+            },
             icon: const Icon(
               Icons.message_rounded,
               color: Colors.black,
