@@ -4,4 +4,3 @@ abstract class IHomeViewModel extends IBaseViewModel {
   void showRecentActivities();
   void showDirects();
 }
-

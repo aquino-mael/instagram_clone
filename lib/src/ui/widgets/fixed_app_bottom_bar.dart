@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../routes/routes.dart';
+import '../screens/screens.dart';
 import 'widgets.dart';
 
 class FixedAppBottomBar extends StatelessWidget {
@@ -25,14 +27,22 @@ class FixedAppBottomBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              RouterNavigator.navigateAndClear(
+                HomeScreen.screenName,
+              );
+            },
             child: const Icon(
               Icons.home,
               size: 30,
             ),
           ),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              RouterNavigator.navigateAndClear(
+                SearchScreen.screenName,
+              );
+            },
             child: const Icon(
               Icons.search,
               size: 30,
